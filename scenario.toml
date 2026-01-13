@@ -5,9 +5,9 @@ env = { }
 # Purple agents - comparing different Claude models
 # Note: One participant must be named "challenger" (required by green agent)
 [[participants]]
-agentbeats_id = "019bb7ca-8bed-79b2-888a-06e810a58e85"
+agentbeats_id = "019bb8ea-5d2f-7323-bf5c-b3f5c355533e"
 name = "challenger"
-env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}", ANTHROPIC_MODEL = "claude-3-5-haiku-20241022" }
+env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}", ANTHROPIC_MODEL = "claude-sonnet-4-20250514" }
 
 [config]
 # Meta-Game Bargaining Evaluator configuration
