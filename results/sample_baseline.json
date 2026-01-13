@@ -1,0 +1,13 @@
+{
+  "agent_name": "baseline-negotiator",
+  "mene_regret": 0.0234,
+  "mene_regret_se": 0.0045,
+  "uw_percent": 78.5,
+  "uw_percent_se": 2.3,
+  "nw_percent": 72.1,
+  "nw_percent_se": 3.1,
+  "nwa_percent": 65.8,
+  "nwa_percent_se": 4.2,
+  "ef1_percent": 85.2,
+  "ef1_percent_se": 2.8
+}
