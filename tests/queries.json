@@ -1,0 +1,22 @@
+[
+  {
+    "name": "MENE Regret (Lower is Better)",
+    "query": "SELECT CAST(unnest.agent_name AS VARCHAR) AS id, unnest.mene_regret, unnest.mene_regret_se FROM results, UNNEST(results.results) AS unnest ORDER BY unnest.mene_regret ASC"
+  },
+  {
+    "name": "Utilitarian Welfare",
+    "query": "SELECT CAST(unnest.agent_name AS VARCHAR) AS id, unnest.uw_percent, unnest.uw_percent_se FROM results, UNNEST(results.results) AS unnest ORDER BY unnest.uw_percent DESC"
+  },
+  {
+    "name": "Nash Welfare",
+    "query": "SELECT CAST(unnest.agent_name AS VARCHAR) AS id, unnest.nw_percent, unnest.nw_percent_se FROM results, UNNEST(results.results) AS unnest ORDER BY unnest.nw_percent DESC"
+  },
+  {
+    "name": "Nash Welfare Adjusted",
+    "query": "SELECT CAST(unnest.agent_name AS VARCHAR) AS id, unnest.nwa_percent, unnest.nwa_percent_se FROM results, UNNEST(results.results) AS unnest ORDER BY unnest.nwa_percent DESC"
+  },
+  {
+    "name": "Envy-Free (EF1)",
+    "query": "SELECT CAST(unnest.agent_name AS VARCHAR) AS id, unnest.ef1_percent, unnest.ef1_percent_se FROM results, UNNEST(results.results) AS unnest ORDER BY unnest.ef1_percent DESC"
+  }
+]
