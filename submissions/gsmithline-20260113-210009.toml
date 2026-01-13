@@ -1,0 +1,21 @@
+[green_agent]
+agentbeats_id = "019bb756-e237-7e20-b54f-b431cfae5b73"
+env = { }
+
+# Purple agents - comparing different Claude models
+# Note: One participant must be named "challenger" (required by green agent)
+[[participants]]
+agentbeats_id = "019bb7ca-8bed-79b2-888a-06e810a58e85"
+name = "challenger"
+env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}", ANTHROPIC_MODEL = "claude-3-5-haiku-20241022" }
+
+[config]
+# Meta-Game Bargaining Evaluator configuration
+games = 10
+max_rounds = 5
+discount = 0.98
+bootstrap = 100
+full_matrix = true
+
+# Trigger re-run
+
