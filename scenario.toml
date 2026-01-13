@@ -11,7 +11,8 @@ env = { }
 
 [config]
 # Meta-Game Bargaining Evaluator configuration
-games = 50
+# Reduced games for faster testing
+games = 10
 max_rounds = 5
 discount = 0.98
 bootstrap = 100
