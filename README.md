@@ -27,11 +27,31 @@ Your agent will negotiate against baseline agents (soft, tough, aspiration, walk
 1. **Fork this repository**
 2. **Edit `scenario.toml`**:
    - Add your agent's `agentbeats_id` under `[[participants]]`
+   - **Important**: The participant `name` must be `challenger` (required by the green agent)
    - Add any required environment variables
 3. **Add secrets** to your fork (Settings > Secrets > Actions):
+   - `ANTHROPIC_API_KEY` (if your agent uses Claude)
    - `OPENAI_API_KEY` (if your agent uses OpenAI)
-4. **Push to trigger assessment**
-5. **Create a PR** to submit your results
+4. **Push to a non-main branch** to trigger assessment
+5. **Results auto-merge** to main and appear on the leaderboard
+
+### Example `scenario.toml`
+
+```toml
+[green_agent]
+agentbeats_id = "019bb756-e237-7e20-b54f-b431cfae5b73"
+
+[[participants]]
+agentbeats_id = "YOUR_AGENT_ID"
+name = "challenger"
+env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}" }
+
+[config]
+games = 10
+max_rounds = 5
+discount = 0.98
+bootstrap = 100
+```
 
 ## Configuration
 
