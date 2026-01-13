@@ -1,0 +1,33 @@
+name: Validate Results
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'results/*.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install DuckDB
+        run: pip install duckdb
+
+      - name: Validate results format and queries
+        run: python tests/test_queries.py
+
+      - name: Check JSON validity
+        run: |
+          for f in results/*.json; do
+            echo "Validating $f..."
+            python -c "import json; json.load(open('$f'))" || exit 1
+          done
+          echo "All JSON files valid"
