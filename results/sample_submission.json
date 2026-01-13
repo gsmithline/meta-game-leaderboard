@@ -1,0 +1,18 @@
+{
+  "agent_name": "sample-test-agent",
+  "participants": {
+    "challenger": "sample-test-agent"
+  },
+  "mene_regret": 0.05,
+  "mene_regret_se": 0.01,
+  "uw_percent": 82.5,
+  "uw_percent_se": 3.2,
+  "nw_percent": 78.3,
+  "nw_percent_se": 4.1,
+  "nwa_percent": 45.6,
+  "nwa_percent_se": 5.8,
+  "ef1_percent": 67.2,
+  "ef1_percent_se": 6.3,
+  "timestamp": "2026-01-13T08:30:00Z",
+  "assessment_id": "test_submission_001"
+}
