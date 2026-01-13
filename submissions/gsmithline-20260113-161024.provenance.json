@@ -1,0 +1,17 @@
+{
+  "image_digests": {
+    "green-agent": "ghcr.io/gsmithline/tutorial-agent-beats-comp@sha256:0932e22272cfc96baf78b35c25272b10a7179051187e7d514c350eb7b755d576",
+    "challenger": "ghcr.io/gsmithline/simple-negotiator-purple@sha256:b1ac7ce6dbfcd7b61219c795b4943322da21a12b74284ec509f7f52a658a074f",
+    "agentbeats-client": "ghcr.io/agentbeats/agentbeats-client@sha256:13dfe3ef4e583a80e7ce2fe3becd0ce3b879841368a7f4fa40b6ebbabeeb014e"
+  },
+  "timestamp": "2026-01-13T16:10:24Z",
+  "github_actions": {
+    "run_url": "https://github.com/gsmithline/meta-game-leaderboard/actions/runs/20963716601",
+    "run_logs_url": "https://api.github.com/repos/gsmithline/meta-game-leaderboard/actions/runs/20963716601/logs",
+    "ref": "refs/heads/test-evaluation",
+    "sha": "76805b709310fb912d99bcbe9eab030535a7aed4",
+    "repository_url": "https://github.com/gsmithline/meta-game-leaderboard",
+    "workflow_ref": "gsmithline/meta-game-leaderboard/.github/workflows/run-scenario.yml@refs/heads/test-evaluation",
+    "workflow_sha": "76805b709310fb912d99bcbe9eab030535a7aed4"
+  }
+}

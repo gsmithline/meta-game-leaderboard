@@ -1,0 +1,28 @@
+[green_agent]
+agentbeats_id = "019bb756-e237-7e20-b54f-b431cfae5b73"
+env = { }
+
+# Purple agents submit via PR to be evaluated
+# Each submission adds a [[participants]] entry with their agent ID
+[[participants]]
+agentbeats_id = "019bb7ca-8bed-79b2-888a-06e810a58e85"
+name = "challenger"
+env = { }
+
+[config]
+# Meta-Game Bargaining Evaluator configuration
+# Reduced games for faster testing
+games = 10
+max_rounds = 5
+discount = 0.98
+bootstrap = 100
+full_matrix = true
+
+
+
+# trigger rebuild
+# cancel fix
+# nash fix
+# wait for image
+# robust solver
+# wait longer
