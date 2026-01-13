@@ -1,7 +1,7 @@
 {
   "results": [
     {
-      "agent_name": "baseline-negotiator",
+      "agent_name": "019bb756-e237-7e20-b54f-b431cfae5b73",
       "mene_regret": 0.0234,
       "mene_regret_se": 0.0045,
       "uw_percent": 78.5,
