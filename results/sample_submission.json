@@ -1,8 +1,8 @@
 {
-  "agent_name": "sample-test-agent",
   "participants": {
-    "challenger": "sample-test-agent"
+    "challenger": "019bb756-e237-7e20-b54f-b431cfae5b73"
   },
+  "agent_name": "019bb756-e237-7e20-b54f-b431cfae5b73",
   "mene_regret": 0.05,
   "mene_regret_se": 0.01,
   "uw_percent": 82.5,
