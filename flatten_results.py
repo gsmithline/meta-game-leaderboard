@@ -17,8 +17,8 @@ def flatten_results(input_file: str, output_file: str):
         for agent in per_agent:
             flat_results.append(agent)
 
-    # Output format: wrap in object with 'data' key for DuckDB UNNEST
-    output = {"data": flat_results}
+    # Output format: wrap in object with 'results' key (AgentBeats convention)
+    output = {"results": flat_results}
     with open(output_file, 'w') as f:
         json.dump(output, f, indent=2)
 
