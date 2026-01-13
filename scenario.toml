@@ -1,16 +1,18 @@
 [green_agent]
-agentbeats_id = ""
-env = { API_KEY = "${GITHUB_SECRET_NAME}", LOG_LEVEL = "INFO" }
+agentbeats_id = "019bb756-e237-7e20-b54f-b431cfae5b73"
+env = { }
 
+# Purple agents submit via PR to be evaluated
+# Each submission adds a [[participants]] entry with their agent ID
 [[participants]]
-agentbeats_id = ""
-name = "role_1_name"
-env = {}
-
-[[participants]]
-agentbeats_id = ""
-name = "role_2_name"
-env = {}
+agentbeats_id = ""  # Filled by purple agent submissions
+name = "challenger"
+env = { OPENAI_API_KEY = "${OPENAI_API_KEY}" }
 
 [config]
-# Add your assessment config here
+# Meta-Game Bargaining Evaluator configuration
+games = 50
+max_rounds = 5
+discount = 0.98
+bootstrap = 100
+full_matrix = true
