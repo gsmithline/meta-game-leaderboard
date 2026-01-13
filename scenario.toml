@@ -7,7 +7,7 @@ env = { }
 [[participants]]
 agentbeats_id = "019bb7ca-8bed-79b2-888a-06e810a58e85"
 name = "challenger"
-env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}" }
+env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}", ANTHROPIC_MODEL = "claude-sonnet-4-20250514" }
 
 [config]
 # Meta-Game Bargaining Evaluator configuration
