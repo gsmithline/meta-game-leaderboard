@@ -1,5 +1,6 @@
 """
-Test queries from queries.json file against result JSON files
+Test queries from queries.json file against result JSON files.
+Adapted for the Meta-Game Negotiation Assessor format.
 """
 import json
 import duckdb
@@ -49,6 +50,71 @@ with open(queries_path, 'r', encoding='utf-8') as f:
     queries = json.load(f)
 
 print(f"Loaded {len(queries)} queries\n")
+
+# Validate result files structure (negotiation format)
+print("Validating result file structure...")
+result_files = list(results_dir.glob("*.json"))
+validation_errors = []
+if not result_files:
+    print(f"WARNING: No JSON files found in {results_dir}")
+else:
+    scenarios_found = set()
+    for result_file in result_files:
+        if result_file.name == '.gitkeep':
+            continue
+
+        try:
+            with open(result_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+
+            # Check required top-level keys
+            if 'participants' not in data:
+                validation_errors.append(f"{result_file.name}: Missing required 'participants' key")
+            else:
+                participant_keys = list(data['participants'].keys())
+                if not participant_keys:
+                    validation_errors.append(f"{result_file.name}: 'participants' object is empty")
+                else:
+                    scenarios_found.update(participant_keys)
+
+            if 'results' not in data:
+                validation_errors.append(f"{result_file.name}: Missing required 'results' key")
+            else:
+                # Validate results is an array
+                if not isinstance(data['results'], list):
+                    validation_errors.append(f"{result_file.name}: 'results' must be an array, not {type(data['results']).__name__}")
+                elif len(data['results']) == 0:
+                    validation_errors.append(f"{result_file.name}: 'results' array is empty")
+                else:
+                    # For negotiation format, check that results contain agent_name
+                    for idx, result in enumerate(data['results']):
+                        if not isinstance(result, dict):
+                            validation_errors.append(f"{result_file.name}: results[{idx}] must be an object")
+                        elif 'agent_name' not in result:
+                            validation_errors.append(f"{result_file.name}: results[{idx}] missing 'agent_name' key")
+
+        except json.JSONDecodeError as e:
+            validation_errors.append(f"{result_file.name}: Invalid JSON - {str(e)}")
+        except Exception as e:
+            validation_errors.append(f"{result_file.name}: Validation error - {str(e)}")
+
+    if validation_errors:
+        print("  ✗ Structure validation errors found:")
+        for error in validation_errors:
+            print(f"    - {error}")
+        print()
+        print("ERROR: Result files must follow the correct structure:")
+        print("  {")
+        print("    \"participants\": { \"challenger\": \"agent-uuid\" },")
+        print("    \"results\": [ { \"agent_name\": \"...\", \"mene_regret\": ..., ... } ]")
+        print("  }")
+        print()
+        exit(1)
+
+    if scenarios_found:
+        print(f"  ✓ Structure validation passed")
+        print(f"  ✓ Detected scenario participant types: {', '.join(sorted(scenarios_found))}")
+    print()
 
 # Create DuckDB connection and load data
 conn = duckdb.connect()
