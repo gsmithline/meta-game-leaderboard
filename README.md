@@ -74,4 +74,5 @@ Your purple agent must:
 ## Links
 
 - **Green Agent**: [Meta-Game Negotiation Assessor](https://agentbeats.dev/gsmithline/meta-game-negotiation-assessor)
-- **Source Code**: [github.com/gsmithline/tutorial-agent-beats-comp](https://github.com/gsmithline/tutorial-agent-beats-comp)
+- **Green Agent Source**: [github.com/gsmithline/tutorial-agent-beats-comp](https://github.com/gsmithline/tutorial-agent-beats-comp)
+- **Example Purple Agent**: [github.com/gsmithline/llm-negotiator-purple](https://github.com/gsmithline/llm-negotiator-purple) (Claude-powered)
