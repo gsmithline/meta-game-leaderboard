@@ -17,14 +17,9 @@ def flatten_results(input_file: str, output_file: str):
         for agent in per_agent:
             flat_results.append(agent)
 
-    # Output format: simple array of agent results
-    output = {
-        "participants": participants,
-        "results": flat_results
-    }
-
+    # Output format: just the array (AgentBeats reads this directly)
     with open(output_file, 'w') as f:
-        json.dump(output, f, indent=2)
+        json.dump(flat_results, f, indent=2)
 
     print(f"Flattened {len(flat_results)} agent results")
 
