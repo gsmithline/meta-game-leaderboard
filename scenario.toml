@@ -7,7 +7,7 @@ env = { }
 [[participants]]
 agentbeats_id = "019bb7ca-8bed-79b2-888a-06e810a58e85"
 name = "challenger"
-env = { }
+env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}" }
 
 [config]
 # Meta-Game Bargaining Evaluator configuration
@@ -17,12 +17,3 @@ max_rounds = 5
 discount = 0.98
 bootstrap = 100
 full_matrix = true
-
-
-
-# trigger rebuild
-# cancel fix
-# nash fix
-# wait for image
-# robust solver
-# wait longer
