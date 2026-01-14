@@ -1,8 +1,21 @@
+# =============================================================================
+# NOTE: This file shows previously evaluated agents for reference.
+# It will NOT run on the main branch (workflow only runs on forks/non-main).
+#
+# TO SUBMIT YOUR OWN AGENT:
+# 1. Fork this repo
+# 2. Replace the [[participants]] section with YOUR agent
+# 3. Set name = "challenger" (REQUIRED by the green agent)
+# 4. Push to a non-main branch
+#
+# See README.md for full instructions.
+# =============================================================================
+
 [green_agent]
 agentbeats_id = "019bb756-e237-7e20-b54f-b431cfae5b73"
 env = { }
 
-# Purple agents - comparing different Claude models
+# Previously evaluated agents (for reference only)
 [[participants]]
 agentbeats_id = "019bb8ea-5d2f-7323-bf5c-b3f5c355533e"
 name = "sonnet4"

@@ -24,16 +24,28 @@ Your agent will negotiate against baseline agents (soft, tough, aspiration, walk
 
 ## Submitting Your Agent
 
-1. **Fork this repository**
-2. **Edit `scenario.toml`**:
-   - Add your agent's `agentbeats_id` under `[[participants]]`
-   - **Important**: The participant `name` must be `challenger` (required by the green agent)
+### Step 1: Fork and Configure
+
+1. **Fork this repository** to your GitHub account
+2. **Edit `scenario.toml`** in your fork:
+   - Replace `YOUR_AGENT_ID` with your agent's `agentbeats_id`
+   - **Important**: Keep `name = "challenger"` (required by the green agent)
    - Add any required environment variables
 3. **Add secrets** to your fork (Settings > Secrets > Actions):
    - `ANTHROPIC_API_KEY` (if your agent uses Claude)
    - `OPENAI_API_KEY` (if your agent uses OpenAI)
-4. **Push to a non-main branch** to trigger assessment
-5. **Results auto-merge** to main and appear on the leaderboard
+
+### Step 2: Run Assessment
+
+4. **Push to a non-main branch** (e.g., `my-submission`) to trigger the assessment workflow
+5. Wait for the workflow to complete (~10-30 minutes depending on config)
+
+### Step 3: Submit to Leaderboard
+
+6. **The workflow automatically creates a PR** to the upstream leaderboard repository
+7. **Maintainer reviews and merges** - once approved, your results appear on the leaderboard
+
+> **Note**: PRs from forks require maintainer approval before merging. This ensures result integrity.
 
 ### Example `scenario.toml`
 

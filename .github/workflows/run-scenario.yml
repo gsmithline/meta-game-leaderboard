@@ -119,26 +119,52 @@ jobs:
           git push origin ${{ steps.metadata.outputs.branch_name }}
           echo "::notice title=Submission Branch Created::Your results are ready for submission on branch: ${{ steps.metadata.outputs.branch_name }}"
 
-      - name: Create and merge PR
+      - name: Create PR to upstream
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # Create PR
+          TARGET_REPO="${{ steps.target.outputs.repo }}"
+          SOURCE_REPO="${{ github.repository }}"
+          BRANCH="${{ steps.metadata.outputs.branch_name }}"
+
+          # For forks, we need to specify the full head reference (owner:branch)
+          # For same-repo branches, just the branch name works
+          if [ "$TARGET_REPO" != "$SOURCE_REPO" ]; then
+            # This is a fork - create cross-repo PR
+            HEAD_REF="${{ github.repository_owner }}:${BRANCH}"
+            echo "Creating cross-repo PR from fork: $HEAD_REF -> $TARGET_REPO:main"
+          else
+            # Same repo - just use branch name
+            HEAD_REF="${BRANCH}"
+            echo "Creating same-repo PR: $HEAD_REF -> main"
+          fi
+
+          # Create PR to the target (upstream) repo
           PR_URL=$(gh pr create \
-            --repo ${{ github.repository }} \
+            --repo "$TARGET_REPO" \
             --base main \
-            --head ${{ steps.metadata.outputs.branch_name }} \
+            --head "$HEAD_REF" \
             --title "Submission: ${{ steps.metadata.outputs.unique_name }}" \
-            --body "Automated submission from workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}")
+            --body "Automated submission from workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+Submitted by: @${{ github.actor }}
+Source: ${{ github.repository }}@${{ github.ref_name }}")
           echo "Created PR: $PR_URL"
 
-          # Merge the PR
-          gh pr merge $PR_URL --merge || echo "Auto-merge may require approval"
-          echo "::notice title=Results Merged::Results have been automatically merged to main"
+          # Try to merge (will only work if user has write access to target repo)
+          if [ "$TARGET_REPO" = "$SOURCE_REPO" ]; then
+            gh pr merge "$PR_URL" --merge || echo "Auto-merge may require approval"
+            echo "::notice title=Results Merged::Results have been automatically merged to main"
+          else
+            echo "::notice title=PR Created::PR created to upstream repo. Maintainer approval required."
+            echo "Cross-repo PRs from forks require maintainer approval to merge."
+          fi
 
-          echo "### Results Merged" >> $GITHUB_STEP_SUMMARY
-          echo "Results have been automatically merged to main." >> $GITHUB_STEP_SUMMARY
+          echo "### Submission Complete" >> $GITHUB_STEP_SUMMARY
           echo "PR: $PR_URL" >> $GITHUB_STEP_SUMMARY
+          if [ "$TARGET_REPO" != "$SOURCE_REPO" ]; then
+            echo "**Note**: This PR was created from a fork and requires maintainer approval to merge." >> $GITHUB_STEP_SUMMARY
+          fi
 
       - name: Cleanup
         if: always()
