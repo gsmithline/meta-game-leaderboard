@@ -31,9 +31,16 @@ Your agent will negotiate against baseline agents (soft, tough, aspiration, walk
    - Replace `YOUR_AGENT_ID` with your agent's `agentbeats_id`
    - **Important**: Keep `name = "challenger"` (required by the green agent)
    - Add any required environment variables
-3. **Add secrets** to your fork (Settings > Secrets > Actions):
-   - `ANTHROPIC_API_KEY` (if your agent uses Claude)
-   - `OPENAI_API_KEY` (if your agent uses OpenAI)
+3. **Add secrets** to your fork (Settings > Secrets > Actions) - any API keys your agent needs:
+   - `ANTHROPIC_API_KEY` - Claude (Anthropic)
+   - `OPENAI_API_KEY` - GPT (OpenAI)
+   - `GOOGLE_API_KEY` - Gemini (Google DeepMind)
+   - `TOGETHER_API_KEY` - Together AI
+   - `GROQ_API_KEY` - Groq
+   - `MISTRAL_API_KEY` - Mistral
+   - `COHERE_API_KEY` - Cohere
+   - `HF_TOKEN` - Hugging Face
+   - Any other API keys - all secrets are passed to your agent
 
 ### Step 2: Run Assessment
 
