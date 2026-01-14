@@ -140,15 +140,13 @@ jobs:
           fi
 
           # Create PR to the target (upstream) repo
+          BODY="Automated submission from workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           PR_URL=$(gh pr create \
             --repo "$TARGET_REPO" \
             --base main \
             --head "$HEAD_REF" \
             --title "Submission: ${{ steps.metadata.outputs.unique_name }}" \
-            --body "Automated submission from workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-
-Submitted by: @${{ github.actor }}
-Source: ${{ github.repository }}@${{ github.ref_name }}")
+            --body "$BODY")
           echo "Created PR: $PR_URL"
 
           # For same-repo, merge directly. For forks, upstream auto-merge workflow handles it.
