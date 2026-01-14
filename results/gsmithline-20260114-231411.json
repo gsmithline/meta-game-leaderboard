@@ -1,0 +1,98 @@
+{
+  "participants": {
+    "challenger": "019bbdf1-4f02-7460-887e-231de6555fc5"
+  },
+  "results": [
+    {
+      "agent_name": "soft",
+      "ef1_percent": 19.133887412268045,
+      "ef1_percent_se": 10.278511785976645,
+      "mene_regret": 1.167379224996779e-05,
+      "mene_regret_se": 4.4086836660743004e-05,
+      "nw_percent": 49.935161946461434,
+      "nw_percent_se": 19.273532583703993,
+      "nwa_percent": 23.02859652525268,
+      "nwa_percent_se": 14.703388499368216,
+      "uw_percent": 68.82760797200974,
+      "uw_percent_se": 23.97568230810139
+    },
+    {
+      "agent_name": "tough",
+      "ef1_percent": 0.0,
+      "ef1_percent_se": 0.0,
+      "mene_regret": 3.02917207843718e-05,
+      "mene_regret_se": 7.283124343172051e-05,
+      "nw_percent": 64.34864461153465,
+      "nw_percent_se": 23.292298545303208,
+      "nwa_percent": 2.053779733686735e-13,
+      "nwa_percent_se": 3.240186336418917e-13,
+      "uw_percent": 75.68729720071778,
+      "uw_percent_se": 26.833311868164884
+    },
+    {
+      "agent_name": "aspiration",
+      "ef1_percent": 21.81224326979565,
+      "ef1_percent_se": 15.96732302191688,
+      "mene_regret": 1.5221623379199147e-05,
+      "mene_regret_se": 5.411836132364259e-05,
+      "nw_percent": 61.76730576717333,
+      "nw_percent_se": 24.375033155745616,
+      "nwa_percent": 23.659098632498406,
+      "nwa_percent_se": 20.027149563927786,
+      "uw_percent": 66.0029960533616,
+      "uw_percent_se": 25.103943565553593
+    },
+    {
+      "agent_name": "walk",
+      "ef1_percent": 0.0,
+      "ef1_percent_se": 0.0,
+      "mene_regret": 0.0,
+      "mene_regret_se": 0.0,
+      "nw_percent": 0.0,
+      "nw_percent_se": 0.0,
+      "nwa_percent": 0.0,
+      "nwa_percent_se": 0.0,
+      "uw_percent": 0.0,
+      "uw_percent_se": 0.0
+    },
+    {
+      "agent_name": "nfsp",
+      "ef1_percent": 20.246414060838237,
+      "ef1_percent_se": 21.057653679305385,
+      "mene_regret": 4.746566441497832e-05,
+      "mene_regret_se": 8.266092625977222e-05,
+      "nw_percent": 73.36068281324418,
+      "nw_percent_se": 25.756262835855726,
+      "nwa_percent": 38.2536748401388,
+      "nwa_percent_se": 29.48545944210937,
+      "uw_percent": 80.93719605202493,
+      "uw_percent_se": 28.045571388413126
+    },
+    {
+      "agent_name": "rnad",
+      "ef1_percent": 27.438183070344568,
+      "ef1_percent_se": 20.696181822233896,
+      "mene_regret": 3.5431483068069236e-05,
+      "mene_regret_se": 7.909905977209055e-05,
+      "nw_percent": 67.78280598915595,
+      "nw_percent_se": 24.253794514814565,
+      "nwa_percent": 38.9183007824574,
+      "nwa_percent_se": 25.48432687225997,
+      "uw_percent": 75.7931143462916,
+      "uw_percent_se": 26.52390610428202
+    },
+    {
+      "agent_name": "019bbdf1-4f02-7460-887e-231de6555fc5",
+      "ef1_percent": 2.5430205765765126,
+      "ef1_percent_se": 3.8057867116348043,
+      "mene_regret": 3.982774672793416e-05,
+      "mene_regret_se": 7.356427075140306e-05,
+      "nw_percent": 71.28589470279798,
+      "nw_percent_se": 25.15950330748587,
+      "nwa_percent": 19.803210540306793,
+      "nwa_percent_se": 17.77859487927466,
+      "uw_percent": 88.79019115801323,
+      "uw_percent_se": 31.026992190363277
+    }
+  ]
+}
