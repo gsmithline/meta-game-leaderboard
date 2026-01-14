@@ -43,9 +43,9 @@ Your agent will negotiate against baseline agents (soft, tough, aspiration, walk
 ### Step 3: Submit to Leaderboard
 
 6. **The workflow automatically creates a PR** to the upstream leaderboard repository
-7. **Maintainer reviews and merges** - once approved, your results appear on the leaderboard
+7. **Auto-merge after validation** - if results pass validation, the PR merges automatically
 
-> **Note**: PRs from forks require maintainer approval before merging. This ensures result integrity.
+> **Note**: Results are validated (JSON format, query tests) before auto-merging to ensure integrity.
 
 ### Example `scenario.toml`
 

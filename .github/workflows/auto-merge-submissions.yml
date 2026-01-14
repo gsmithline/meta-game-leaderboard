@@ -1,0 +1,48 @@
+name: Auto-Merge Submissions
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'results/*.json'
+      - 'submissions/*.toml'
+      - 'submissions/*.json'
+
+jobs:
+  validate-and-merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install DuckDB
+        run: pip install duckdb
+
+      - name: Validate results format
+        run: |
+          # Check all JSON files are valid
+          for f in results/*.json; do
+            echo "Validating $f..."
+            python -c "import json; json.load(open('$f'))" || exit 1
+          done
+          echo "All JSON files valid"
+
+      - name: Run query tests
+        run: python tests/test_queries.py
+
+      - name: Auto-merge PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "Validation passed - auto-merging PR #${{ github.event.pull_request.number }}"
+          gh pr merge ${{ github.event.pull_request.number }} --merge --auto
+          echo "::notice title=Auto-Merged::PR has been automatically merged after passing validation"

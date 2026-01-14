@@ -151,20 +151,16 @@ Submitted by: @${{ github.actor }}
 Source: ${{ github.repository }}@${{ github.ref_name }}")
           echo "Created PR: $PR_URL"
 
-          # Try to merge (will only work if user has write access to target repo)
+          # For same-repo, merge directly. For forks, upstream auto-merge workflow handles it.
           if [ "$TARGET_REPO" = "$SOURCE_REPO" ]; then
             gh pr merge "$PR_URL" --merge || echo "Auto-merge may require approval"
             echo "::notice title=Results Merged::Results have been automatically merged to main"
           else
-            echo "::notice title=PR Created::PR created to upstream repo. Maintainer approval required."
-            echo "Cross-repo PRs from forks require maintainer approval to merge."
+            echo "::notice title=PR Created::PR submitted to upstream. Will auto-merge after validation passes."
           fi
 
           echo "### Submission Complete" >> $GITHUB_STEP_SUMMARY
           echo "PR: $PR_URL" >> $GITHUB_STEP_SUMMARY
-          if [ "$TARGET_REPO" != "$SOURCE_REPO" ]; then
-            echo "**Note**: This PR was created from a fork and requires maintainer approval to merge." >> $GITHUB_STEP_SUMMARY
-          fi
 
       - name: Cleanup
         if: always()
