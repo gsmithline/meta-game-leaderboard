@@ -15,21 +15,11 @@
 agentbeats_id = "019bb756-e237-7e20-b54f-b431cfae5b73"
 env = { }
 
-# Previously evaluated agents (for reference only)
+# Challenger agent for this submission - reject-agent (always walks)
 [[participants]]
-agentbeats_id = "019bb8ea-5d2f-7323-bf5c-b3f5c355533e"
-name = "sonnet4"
-env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}", ANTHROPIC_MODEL = "claude-sonnet-4-20250514" }
-
-[[participants]]
-agentbeats_id = "019bb8eb-a966-79c3-9e3c-ea82da8ed585"
-name = "opus4"
-env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}", ANTHROPIC_MODEL = "claude-opus-4-20250514" }
-
-[[participants]]
-agentbeats_id = "019bb7ca-8bed-79b2-888a-06e810a58e85"
-name = "haiku35"
-env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}", ANTHROPIC_MODEL = "claude-3-5-haiku-20241022" }
+agentbeats_id = "019bbdf1-4f02-7460-887e-231de6555fc5"
+name = "challenger"
+env = { }
 
 [config]
 # Meta-Game Bargaining Evaluator configuration
