@@ -15,6 +15,12 @@
 agentbeats_id = "019bb756-e237-7e20-b54f-b431cfae5b73"
 env = { }
 
+# Challenger: reject-agent that always walks (tests walk metric fix)
+[[participants]]
+agentbeats_id = "019bbdf1-4f02-7460-887e-231de6555fc5"
+name = "challenger"
+env = { }
+
 # Previously evaluated agents (for reference only)
 [[participants]]
 agentbeats_id = "019bb8ea-5d2f-7323-bf5c-b3f5c355533e"
