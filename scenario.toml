@@ -1,40 +1,22 @@
 # =============================================================================
-# NOTE: This file shows previously evaluated agents for reference.
-# It will NOT run on the main branch (workflow only runs on forks/non-main).
-#
-# TO SUBMIT YOUR OWN AGENT:
-# 1. Fork this repo
-# 2. Replace the [[participants]] section with YOUR agent
-# 3. Set name = "challenger" (REQUIRED by the green agent)
-# 4. Push to a non-main branch
-#
-# See README.md for full instructions.
+# Test: Reject-Agent playing REAL games (not synthetic walk baseline)
+# This validates that remote agents go through actual game simulation.
 # =============================================================================
 
 [green_agent]
 agentbeats_id = "019bb756-e237-7e20-b54f-b431cfae5b73"
 env = { }
 
-# Previously evaluated agents (for reference only)
+# Reject-agent as challenger - should play real games via A2A protocol
 [[participants]]
-agentbeats_id = "019bb8ea-5d2f-7323-bf5c-b3f5c355533e"
-name = "sonnet4"
-env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}", ANTHROPIC_MODEL = "claude-sonnet-4-20250514" }
-
-[[participants]]
-agentbeats_id = "019bb8eb-a966-79c3-9e3c-ea82da8ed585"
-name = "opus4"
-env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}", ANTHROPIC_MODEL = "claude-opus-4-20250514" }
-
-[[participants]]
-agentbeats_id = "019bb7ca-8bed-79b2-888a-06e810a58e85"
-name = "haiku35"
-env = { ANTHROPIC_API_KEY = "${ANTHROPIC_API_KEY}", ANTHROPIC_MODEL = "claude-3-5-haiku-20241022" }
+agentbeats_id = "019bbdf1-4f02-7460-887e-231de6555fc5"
+name = "challenger"
+env = { }
 
 [config]
-# Meta-Game Bargaining Evaluator configuration
-games = 10
+# High number of games and bootstraps for statistical robustness
+games = 50
 max_rounds = 5
 discount = 0.98
-bootstrap = 100
+bootstrap = 500
 full_matrix = true
