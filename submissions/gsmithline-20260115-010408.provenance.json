@@ -1,0 +1,17 @@
+{
+  "image_digests": {
+    "green-agent": "ghcr.io/gsmithline/tutorial-agent-beats-comp@sha256:aafd1fabff6a45ebf7b7bf8d905fd1984c9624377ccc2c5554054b227a401a49",
+    "challenger": "ghcr.io/gsmithline/simple-negotiator-purple@sha256:b1ac7ce6dbfcd7b61219c795b4943322da21a12b74284ec509f7f52a658a074f",
+    "agentbeats-client": "ghcr.io/agentbeats/agentbeats-client@sha256:13dfe3ef4e583a80e7ce2fe3becd0ce3b879841368a7f4fa40b6ebbabeeb014e"
+  },
+  "timestamp": "2026-01-15T01:04:08Z",
+  "github_actions": {
+    "run_url": "https://github.com/gsmithline/meta-game-leaderboard/actions/runs/21015750001",
+    "run_logs_url": "https://api.github.com/repos/gsmithline/meta-game-leaderboard/actions/runs/21015750001/logs",
+    "ref": "refs/heads/test-reject-agent-fix-v2",
+    "sha": "dfda19af29dc4d48911b26937d047cb01d147dff",
+    "repository_url": "https://github.com/gsmithline/meta-game-leaderboard",
+    "workflow_ref": "gsmithline/meta-game-leaderboard/.github/workflows/run-scenario.yml@refs/heads/test-reject-agent-fix-v2",
+    "workflow_sha": "dfda19af29dc4d48911b26937d047cb01d147dff"
+  }
+}
