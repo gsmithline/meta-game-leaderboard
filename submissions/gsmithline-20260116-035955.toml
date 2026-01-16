@@ -1,0 +1,22 @@
+# =============================================================================
+# Test: Verify RNAD agent reinitialization fix
+# Testing reject-agent with 50 games, 500 bootstraps (same as stuck run)
+# =============================================================================
+
+[green_agent]
+agentbeats_id = "019bb756-e237-7e20-b54f-b431cfae5b73"
+env = { }
+
+# Reject-agent as challenger
+[[participants]]
+agentbeats_id = "019bbdf1-4f02-7460-887e-231de6555fc5"
+name = "challenger"
+env = { }
+
+[config]
+# Same config as the stuck run - should now complete in minutes, not hours
+games = 50
+max_rounds = 5
+discount = 0.98
+bootstrap = 500
+full_matrix = true

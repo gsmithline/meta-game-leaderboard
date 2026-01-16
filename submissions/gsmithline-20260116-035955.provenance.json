@@ -1,0 +1,17 @@
+{
+  "image_digests": {
+    "green-agent": "ghcr.io/gsmithline/tutorial-agent-beats-comp@sha256:543fee15165df5d89c09e6b376e77bc0e82bd401153658c841efacfb626c0380",
+    "challenger": "ghcr.io/gsmithline/simple-negotiator-purple@sha256:b1ac7ce6dbfcd7b61219c795b4943322da21a12b74284ec509f7f52a658a074f",
+    "agentbeats-client": "ghcr.io/agentbeats/agentbeats-client@sha256:13dfe3ef4e583a80e7ce2fe3becd0ce3b879841368a7f4fa40b6ebbabeeb014e"
+  },
+  "timestamp": "2026-01-16T03:59:55Z",
+  "github_actions": {
+    "run_url": "https://github.com/gsmithline/meta-game-leaderboard/actions/runs/21052973791",
+    "run_logs_url": "https://api.github.com/repos/gsmithline/meta-game-leaderboard/actions/runs/21052973791/logs",
+    "ref": "refs/heads/test-fix-rnad-reinitialization",
+    "sha": "ea37b7455e7bd1683ea8746dd021b4e1d8152462",
+    "repository_url": "https://github.com/gsmithline/meta-game-leaderboard",
+    "workflow_ref": "gsmithline/meta-game-leaderboard/.github/workflows/run-scenario.yml@refs/heads/test-fix-rnad-reinitialization",
+    "workflow_sha": "ea37b7455e7bd1683ea8746dd021b4e1d8152462"
+  }
+}
