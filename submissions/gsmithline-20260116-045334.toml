@@ -1,0 +1,22 @@
+# =============================================================================
+# Test: Reject-Agent playing REAL games (not synthetic walk baseline)
+# This validates that remote agents go through actual game simulation.
+# =============================================================================
+
+[green_agent]
+agentbeats_id = "019bb756-e237-7e20-b54f-b431cfae5b73"
+env = { }
+
+# Reject-agent as challenger - should play real games via A2A protocol
+[[participants]]
+agentbeats_id = "019bbdf1-4f02-7460-887e-231de6555fc5"
+name = "challenger"
+env = { }
+
+[config]
+# High number of games and bootstraps for statistical robustness
+games = 50
+max_rounds = 5
+discount = 0.98
+bootstrap = 500
+full_matrix = true

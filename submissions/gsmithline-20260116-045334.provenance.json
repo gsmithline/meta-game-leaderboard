@@ -1,0 +1,17 @@
+{
+  "image_digests": {
+    "green-agent": "ghcr.io/gsmithline/tutorial-agent-beats-comp@sha256:da2b250bb39c995a9a8b517dcc2458a86017d590b03a783afd3793465b5d756a",
+    "challenger": "ghcr.io/gsmithline/simple-negotiator-purple@sha256:b1ac7ce6dbfcd7b61219c795b4943322da21a12b74284ec509f7f52a658a074f",
+    "agentbeats-client": "ghcr.io/agentbeats/agentbeats-client@sha256:13dfe3ef4e583a80e7ce2fe3becd0ce3b879841368a7f4fa40b6ebbabeeb014e"
+  },
+  "timestamp": "2026-01-16T04:53:34Z",
+  "github_actions": {
+    "run_url": "https://github.com/gsmithline/meta-game-leaderboard/actions/runs/21050393771",
+    "run_logs_url": "https://api.github.com/repos/gsmithline/meta-game-leaderboard/actions/runs/21050393771/logs",
+    "ref": "refs/heads/test-real-games-v1",
+    "sha": "28c8594699ac79cc57f3a4a24cea2ef8f46d49fc",
+    "repository_url": "https://github.com/gsmithline/meta-game-leaderboard",
+    "workflow_ref": "gsmithline/meta-game-leaderboard/.github/workflows/run-scenario.yml@refs/heads/test-real-games-v1",
+    "workflow_sha": "28c8594699ac79cc57f3a4a24cea2ef8f46d49fc"
+  }
+}
